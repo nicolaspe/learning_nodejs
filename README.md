@@ -1,5 +1,44 @@
 # learning_nodejs
-Repository for experiments and learning node.js.
+Repository for experiments and learning node.js + npm
+
+## Commands and setup
+To **check versions** of node or npm, run:
+- `node --version` or `node -v`
+- `npm --version` or `npm -v`
+
+### Initialization
+Initialize a project
+```
+$ npm init
+```
+Which creates a **package.json** file
+[not creating dependencies? update node!](https://stackoverflow.com/questions/45866533/npm-install-not-create-a-new-package-lock-json)
+
+### Updating
+#### node.js
+To update **node.js** via terminal, you can use the npm package [n](https://www.npmjs.com/package/n)
+```
+$ npm install -g n
+```
+With this package, you can update to the latest, stable, lts or any version you want.
+```
+$ n latest
+$ n stable
+$ n lts
+$ n <version>
+```
+And also select the working version just running `n`
+`$ n`
+
+#### npm
+`npm` can update itself
+```
+$ npm install npm@latest -g
+```
+You have to be careful, as `npm` can have trouble working with the latest node version. Luckily, you can manage that with the package previously shown.
+
+## [express.js](https://expressjs.com/)
+
 
 ## Resources
 For learning about node.js and npm

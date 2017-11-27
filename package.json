@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/nicolaspe/learning_nodejs#readme",
   "dependencies": {
+    "express": "^4.16.2",
     "three": "^0.88.0",
     "tone": "^0.11.12"
   }
