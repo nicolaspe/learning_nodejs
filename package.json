@@ -1,0 +1,23 @@
+{
+  "name": "node_experiments",
+  "version": "0.0.1",
+  "description": "Experiments to learn node.js",
+  "main": "main.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolaspe/learning_nodejs.git"
+  },
+  "keywords": [
+    "nodejs",
+    "tutorial"
+  ],
+  "author": "Nicolas Pena-Escarpentier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicolaspe/learning_nodejs/issues"
+  },
+  "homepage": "https://github.com/nicolaspe/learning_nodejs#readme"
+}
