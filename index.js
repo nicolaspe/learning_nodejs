@@ -5,14 +5,17 @@ var io = require('socket.io')(http);
 var path = require('path');
 var port = process.env.PORT || 3000;
 
+var _mode = 0;
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('/three', express.static(path.join(__dirname, '/node_modules/three/build')));
 
 
-// app.get('/', (req,res) => res.send('Hello world!'));
+// app.get('/', (req,res) => res...;
 app.get('/', function(req,res) {
 	res.render(__dirname + '/public/index.html');
+	io.emit('new mode', _mode);
 });
 
 // 404 response
@@ -31,8 +34,9 @@ io.on('connection', function(socket) {
 		console.log("User disconnected");
 	})
 	socket.on('mode', function(mode){
-		io.emit('new mode', mode);
-		console.log("received mode: " +mode);
+		_mode = mode;
+		io.emit('new mode', _mode);
+		console.log("received mode: " +_mode);
 	});
 })
 
