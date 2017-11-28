@@ -10,7 +10,7 @@ app.set('/three', express.static(path.join(__dirname, '/node_modules/three/build
 
 // app.get('/', (req,res) => res.send('Hello world!'));
 app.get('/', function(req,res) {
-	res.sendFile(__dirname + '/public/index.html');
+	res.render(__dirname + '/public/index.html');
 });
 
 // 404 response
