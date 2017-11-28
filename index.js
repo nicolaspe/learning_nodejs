@@ -3,6 +3,8 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
+var port = process.env.PORT || 3000;
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('/three', express.static(path.join(__dirname, '/node_modules/three/build')));
@@ -19,8 +21,8 @@ app.use(function (req, res, next) {
 })
 
 
-let server = http.listen(3000, () => {
-	console.log('Example app listening on port ', server.address().port);
+http.listen(port, () => {
+	console.log('Example app listening on port ', port);
 });
 
 io.on('connection', function(socket) {
