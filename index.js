@@ -1,11 +1,11 @@
 var express = require('express');
 var app = express();
-var path = require('path');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var path = require('path');
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.set('/three', express.static(__dirname + '/node_modules/three/build'));
+app.set('/three', express.static(path.join(__dirname, '/node_modules/three/build')));
 
 
 // app.get('/', (req,res) => res.send('Hello world!'));
