@@ -39,6 +39,13 @@ You have to be careful, as `npm` can have trouble working with the latest node v
 
 ## [express.js](https://expressjs.com/)
 
+Also: course from [lynda.com](https://www.lynda.com/Node-js-tutorials/Learning-Node-js/612195-2.html)
+
+
+## [socket.io](https://socket.io/)
+
+[Learning to use socket.io](https://socket.io/get-started/chat/)
+
 
 ## Resources
 For learning about node.js and npm

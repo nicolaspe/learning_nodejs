@@ -2,8 +2,9 @@
   "name": "node_experiments",
   "version": "0.0.1",
   "description": "Experiments to learn node.js",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "node test/test.js"
   },
   "repository": {
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/nicolaspe/learning_nodejs#readme",
   "dependencies": {
     "express": "^4.16.2",
+    "socket.io": "^2.0.4",
     "three": "^0.88.0",
     "tone": "^0.11.12"
   }
