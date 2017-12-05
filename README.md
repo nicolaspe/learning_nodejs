@@ -47,6 +47,9 @@ Also: course from [lynda.com](https://www.lynda.com/Node-js-tutorials/Learning-N
 [Learning to use socket.io](https://socket.io/get-started/chat/)
 
 
+## Deploy
+[Steps](https://devcenter.heroku.com/articles/getting-started-with-nodejs#prepare-the-app)
+
 ## Resources
 For learning about node.js and npm
 - [Shiffman's Twitter Bot Tutorial](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV)

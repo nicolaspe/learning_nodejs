@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>nodexpress</title>
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<h1>nodexpress experiment!</h1>
+		<p>oh, yeah, baby</p>
+
+		<button id="button0">Mode 0</button>
+		<button id="button1">Mode 1</button>
+		<button id="button2">Mode 2</button>
+
+		<br></br>
+
+		<script>
+			// var socket = io.connect('https://everyday-windows.herokuapp.com/');
+			var socket = io.connect('http://localhost:8081/');
+			// socket.on('new mode', changeMode);
+
+			$("#button0").click(() => {
+				sendMode(0);
+			});
+			$("#button1").click(() => {
+				sendMode(1);
+			});
+			$("#button2").click(() => {
+				sendMode(2);
+			});
+
+			function sendMode(mode){
+				console.log(mode);
+				socket.emit('select', mode);
+			}
+		</script>
+	</body>
+</html>
