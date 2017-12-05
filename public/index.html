@@ -23,23 +23,43 @@
 
 		<script src="sketch.js"></script>
 		<script>
-			var socket = io();
-			socket.on('new mode', changeMode);
+			var mode = 0;
+			var ws = new WebSocket('ws://' +window.location.host);
+			ws.onmessage = function(msg){
+				// print raw message
+				console.log("message received: " + msg.data);
+				// check the message
+				let intComing = parseInt(msg.data);
+				if(intComing != NaN && intComing>=0 && intComing<=5){
+					mode = intComing;
+					changeMode(mode);
+					console.log("mode changed: " + mode);
+				}
+			};
 
+			// var socket = io();
+			// socket.on('new mode', changeMode);
+      //
 			$("#button0").click(() => {
-				sendMode(0);
+				mode = 0;
+				changeMode(mode);
+				console.log("mode changed: " + mode);
 			});
 			$("#button1").click(() => {
-				sendMode(1);
+				mode = 1;
+				changeMode(mode);
+				console.log("mode changed: " + mode);
 			});
 			$("#button2").click(() => {
-				sendMode(2);
+				mode = 2;
+				changeMode(mode);
+				console.log("mode changed: " + mode);
 			});
-
-			function sendMode(mode){
-				console.log(mode);
-				socket.emit('mode', mode);
-			}
+      //
+			// function sendMode(mode){
+			// 	console.log(mode);
+			// 	socket.emit('mode', mode);
+			// }
 		</script>
 	</body>
 </html>

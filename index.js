@@ -36,6 +36,7 @@ wss = new webSocket({ server: http });
 
 wss.on('connection', (ws_client) => {
 	console.log("user connected");
+
 	// mode change
 	ws_client.on('mode', function(mode){
 		console.log("mode" + mode);
@@ -45,6 +46,13 @@ wss.on('connection', (ws_client) => {
 	ws_client.on('message', function(msg){
 		console.log("msg: " + msg);
 		ws_client.send("Hi! You sent: " + msg);
+		// check if the values are valid
+		let intComing = parseInt(msg);
+		if(intComing != NaN && intComing>=0 && intComing<=5){
+			_scene = parseInt(msg)
+			broadcast(_scene);
+			console.log("change scene emited: " + _scene);
+		}
 	});
 	// error handling
 	ws_client.on('error', function(err){
@@ -52,10 +60,18 @@ wss.on('connection', (ws_client) => {
 	});
 	// disconnection
 	ws_client.on('close', () => {
-		console.log("user connected");
+		console.log("user disconnected");
 	});
 })
 
+function broadcast(msg){
+	wss.clients.forEach(function each(client) {
+		client.send(msg);
+    // if (client.readyState === WebSocket.OPEN) {
+    //   client.send(msg);
+    // }
+  });
+}
 
 // socket.io setup -- deprecated
 /*

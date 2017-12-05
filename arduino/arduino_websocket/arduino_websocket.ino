@@ -7,7 +7,7 @@ const char ssid[] = "npe_WiFi";
 const char pass[] = "npescarpentier.1990";
 
 const char serverAddress[] = "138.197.122.214";  // server address
-int port = 8082;                              // port number
+int port = 3000;                              // port number
 WiFiClient tcpSocket;                       // server socket
 
 // make a websocket instance
