@@ -1,5 +1,5 @@
-#define SECRET_SSID "npe_WiFi"
-#define SECRET_PASS "npescarpentier.1990"
+#define _SSID "npe_WiFi"
+#define _PASS "npescarpentier.1990"
 
-//#define SECRET_SSID "itpsandbox"
-//#define SECRET_PASS "NYU+s0a!P?"
+//#define _SSID "itpsandbox"
+//#define _PASS "NYU+s0a!P?"
